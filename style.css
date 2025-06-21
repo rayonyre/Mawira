@@ -1,0 +1,626 @@
+/* Variáveis CSS para facilitar a manutenção */
+:root {
+    --primary-color: #A0522D; /* Tons terrosos ou inspirados na natureza */
+    --secondary-color: #D2B48C; /* Cor complementar */
+    --text-color: #333;
+    --light-text-color: #f8f8f8;
+    --background-color: #f4f4f4;
+    --header-height: 80px;
+}
+
+/* Reset básico e tipografia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background: #8B4513; /* Tom mais escuro do primário */
+}
+
+.btn-primary {
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    margin-top: 20px;
+}
+
+.btn-login {
+    background: none;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 8px 15px;
+    font-size: 0.9rem;
+}
+
+.btn-login:hover {
+    background: var(--primary-color);
+    color: var(--light-text-color);
+}
+
+/* Header */
+.header {
+    background: #fff;
+    color: var(--text-color);
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo a {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-list {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-list a {
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1.05rem;
+    transition: color 0.3s ease;
+}
+
+.nav-list a:hover,
+.nav-list a.active {
+    color: var(--primary-color);
+}
+
+.hamburger-menu {
+    display: none; /* Escondido por padrão em desktop */
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    min-height: calc(100vh - var(--header-height)); /* Ajusta a altura para preencher a tela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: var(--header-height); /* Para evitar que o conteúdo fique atrás do header fixo */
+    position: relative;
+    overflow: hidden; /* Garante que o carrossel não ultrapasse os limites */
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    position: relative; /* Para posicionar o texto sobre o carrossel */
+    z-index: 1;
+    color: var(--light-text-color); /* Texto branco sobre as imagens */
+    text-shadow: 0 0 8px rgba(0,0,0,0.6);
+}
+
+.carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.carousel-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem cubra todo o espaço */
+    filter: brightness(60%); /* Escurece um pouco as imagens para o texto se destacar */
+}
+
+.hero-text {
+    position: relative; /* Para garantir que o texto esteja acima das imagens */
+    z-index: 2;
+    padding: 20px;
+    max-width: 800px;
+}
+
+.hero-text h2 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+/* Footer */
+.footer {
+    background: var(--text-color);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+/* Modal */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed; /* Fica por cima de tudo */
+    z-index: 2000; /* Z-index alto para garantir que esteja acima de tudo */
+    left: 0;
+    top: 0;
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    overflow: auto; /* Habilita scroll se o conteúdo for muito grande */
+    background-color: rgba(0,0,0,0.6); /* Fundo escurecido */
+    display: flex; /* Para centralizar o conteúdo */
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    text-align: center;
+    position: relative;
+}
+
+.modal-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+.modal-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+.btn-modal-close {
+    background: var(--secondary-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-modal-close:hover {
+    background: #C0A581;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header .container {
+        flex-wrap: wrap;
+        padding: 0 15px;
+    }
+
+    .logo {
+        flex-grow: 1; /* Garante que a logo ocupe o espaço necessário */
+        text-align: left;
+    }
+
+    .nav {
+        order: 1; /* Coloca o menu hambúrguer após a logo */
+        margin-left: auto; /* Empurra o hambúrguer para a direita */
+    }
+
+    .nav-list {
+        display: none; /* Esconde a lista de navegação em telas pequenas */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        background: #fff;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        padding: 15px 0;
+        text-align: center;
+    }
+
+    .nav-list.active {
+        display: flex; /* Mostra a lista quando o hambúrguer é clicado */
+    }
+
+    .nav-list li {
+        margin: 10px 0;
+    }
+
+    .hamburger-menu {
+        display: block; /* Mostra o hambúrguer em telas pequenas */
+    }
+
+    .hero-text h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1.2rem;
+    }
+
+    .btn-primary {
+        font-size: 1.1rem;
+        padding: 12px 25px;
+    }
+
+    .modal-content {
+        padding: 20px;
+        width: 95%;
+    }
+
+    .modal-content h2 {
+        font-s/* Seus estilos existentes aqui, por exemplo: */
+/* :root { --primary-color: #8B4513; etc. } */
+/* body, .container, .header, .logo, .nav-list, .btn-login, .hamburger-menu, .hero, .carousel, .modal, .footer etc. */
+
+/* --- Seção "Sobre Nós" --- */
+.about-us {
+    padding: 60px 0;
+    background-color: #fcf8f5; /* Um fundo sutil e claro para a seção */
+    text-align: center;
+    position: relative; /* Pode ser útil se você quiser adicionar algum detalhe de fundo depois */
+    overflow: hidden; /* Garante que elementos filhos não vazem */
+}
+
+.about-us h2 {
+    font-size: 2.8em;
+    color: #333; /* Cor escura para o título, contrasta bem com o fundo claro */
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.about-us h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #8B4513; /* Marrom escuro da sua paleta */
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.about-cards {
+    display: grid;
+    /* Adapta o número de colunas automaticamente, com cards de no mínimo 280px */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; /* Espaçamento entre os cards */
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: #fff; /* Fundo branco puro para os cards */
+    border-radius: 10px; /* Cantos arredondados */
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra suave para profundidade */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee; /* Borda muito sutil para definir o card */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efeito de elevação sutil no hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); /* Sombra mais pronunciada no hover */
+}
+
+.icon-card {
+    font-size: 3.5em; /* Tamanho maior para os ícones */
+    color: #A0522D; /* Um tom de marrom mais claro/quente da sua paleta para os ícones */
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 1.8em;
+    color: #8B4513; /* Marrom escuro da sua paleta para os títulos dos cards */
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 1em;
+    line-height: 1.7;
+    color: #666; /* Cor de texto padrão para boa legibilidade */
+}
+
+.card p strong {
+    color: #8B4513; /* Destaque em marrom escuro para palavras-chave dentro dos cards */
+}
+
+.about-final-text {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 40px;
+    font-weight: 500; /* Um pouco mais de peso na fonte */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .about-cards {
+        grid-template-columns: 1fr; /* Uma única coluna em telas menores */
+        gap: 20px;
+    }
+
+    .about-us h2 {
+        font-size: 2.2em;
+    }
+
+    .card {
+        padding: 25px;
+    }
+
+    .icon-card {
+        font-size: 3em;
+    }
+
+    .card h3 {
+        font-size: 1.6em;
+    }
+
+    .about-final-text {
+        font-size: 1.1em;
+    }
+}
+    }
+
+    .modal-content p {
+        font-size: 1rem;
+    }
+}
+
+/* Seus estilos existentes aqui, incluindo as variáveis CSS: */
+:root {
+    --primary-color: #A0522D; /* Cor primária (Sienna) */
+    --secondary-color: #D2B48C; /* Cor secundária (BurlyWood) */
+    --text-color: #333;
+    --light-text-color: #f8f8f8;
+    --background-color: #f4f4f4;
+    --header-height: 80px;
+}
+
+/* Restante dos seus estilos globais: Reset, body, .container, .btn, .btn-primary, .btn-login, Header, Hero Section, Footer, Modal, Responsividade */
+
+/* --- Seção "Sobre Nós" --- */
+.about-us {
+    padding: 60px 0;
+    background-color: var(--background-color); /* Usa a variável de cor de fundo */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-us h2 {
+    font-size: 2.8em;
+    color: var(--text-color); /* Usa a variável de cor de texto */
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.about-us h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-color); /* Usa a variável de cor primária */
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.about-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: #fff; /* Fundo branco para os cards */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #0c0c0c; /* Borda sutil */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efeito de elevação sutil */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.icon-card {
+    font-size: 3.5em;
+    color: var(--primary-color); /* Ícones com a cor primária */
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 1.8em;
+    color: var(--primary-color); /* Títulos dos cards com a cor primária */
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 1em;
+    line-height: 1.7;
+    color: var(#0c0c0c); /* Texto dos cards com a cor de texto mais clara */
+}
+
+.card p strong {
+    color: var(--primary-color); /* Destaque em negrito com a cor primária */
+}
+
+.about-final-text {
+    font-size: 1.2em;
+    color: var(--text-color);
+    margin-top: 40px;
+    font-weight: 500;
+}
+
+/* --- Estilos para o link do perfil na navegação (Adicionado no script.js) --- */
+.nav-profile-link {
+    color: var(--text-color); /* Cor do texto do menu */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.nav-profile-link:hover {
+    color: var(--primary-color); /* Cor primária no hover */
+    background-color: rgba(160, 82, 45, 0.1); /* Fundo sutil com transparência da cor primária */
+}
+
+.nav-profile-link i {
+    font-size: 1.2em;
+}
+
+/* Garante que o botão de login (quando presente) também tenha um estilo consistente */
+.nav-list #profileLinkContainer .btn-login {
+    background: var(--primary-color);
+    color: var(--light-text-color);
+    border: 2px solid var(--primary-color);
+    padding: 8px 15px;
+    font-size: 0.9rem;
+}
+
+.nav-list #profileLinkContainer .btn-login:hover {
+    background: var(--primary-hover-color); /* Hover da cor primária */
+    color: var(--light-text-color);
+}
+
+/* Ajustes de responsividade para o menu mobile */
+@media (max-width: 768px) {
+    /* ... (seus estilos de media query existentes) ... */
+
+    .nav-list.open {
+        display: flex;
+    }
+
+    .nav-list li {
+        margin: 10px 0;
+    }
+
+    .nav-list li a {
+        padding: 10px 20px;
+        width: 100%;
+        display: block;
+    }
+
+    .nav-list #profileLinkContainer .nav-profile-link,
+    .nav-list #profileLinkContainer .btn-login {
+        width: calc(100% - 40px); /* Ajusta para padding nas laterais */
+        margin: 10px 20px; /* Centraliza com alguma margem */
+        text-align: center;
+        justify-content: center; /* Centraliza conteúdo (ícone e texto) */
+    }
+}
+
+/* Ajustes para o modal conforme sua atualização */
+@media (max-width: 768px) {
+    /* ... (seus estilos de media query existentes para o modal) ... */
+    .modal-content h2 {
+        font-size: 1.8rem; /* Ajuste para telas menores */
+    }
+    .modal-content p {
+        font-size: 1rem; /* Ajuste para telas menores */
+    }
+}

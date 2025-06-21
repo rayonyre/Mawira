@@ -1,0 +1,239 @@
+/* Estilos específicos para a página de blog */
+.blog-posts h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.post-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.post-card {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.post-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.post-card h3 a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.post-card h3 a:hover {
+    color: #777;
+}
+
+.post-meta {
+    color: #777;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.post-card p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Botões de "Leia mais" com cor marrom */
+.btn-secondary {
+    display: inline-block;
+    background-color: #8B4513; /* Marrom */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #A0522D; /* Um tom mais claro de marrom no hover */
+}
+
+.sidebar {
+    grid-area: sidebar;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.sidebar h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.categories {
+    list-style: none;
+    padding: 0;
+}
+
+.categories li {
+    margin-bottom: 10px;
+}
+
+.categories li a {
+    text-decoration: none;
+    color: #555;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.categories li a:hover {
+    background-color: #ddd;
+    color: #333;
+}
+
+.categories ul {
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+/* Layout com sidebar à direita */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 300px; /* Conteúdo principal à esquerda, sidebar à direita */
+    grid-template-areas: "main sidebar";
+    gap: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.blog-posts {
+    grid-area: main;
+}
+
+/* Estilos para o filtro ativo */
+.categories li a.active {
+    background-color: #8B4513; /* Marrom para o filtro ativo */
+    color: white;
+}
+
+.categories li a.active:hover {
+    background-color: #A0522D; /* Um tom mais claro de marrom no hover */
+}
+
+/* Barra de Pesquisa */
+.search-bar {
+    display: flex;
+    margin-bottom: 30px;
+    gap: 10px;
+}
+
+.search-bar input[type="text"] {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.search-bar button {
+    background-color: #8B4513; /* Marrom para o botão de pesquisa */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #A0522D; /* Um tom mais claro de marrom no hover */
+}
+
+/* Media query para telas menores */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "main"
+            "sidebar";
+    }
+
+    .sidebar {
+        margin-top: 30px;
+    }
+
+    .nav-list {
+        position: fixed;
+        top: 60px; /* Ajuste conforme a altura do seu header */
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        flex-direction: column;
+        align-items: flex-start;
+        display: none; /* Oculta o menu inicialmente */
+        z-index: 1000;
+    }
+
+    .nav-list.open {
+        display: flex;
+    }
+
+    .nav-list li {
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav-list li a {
+        color: white;
+        padding: 15px 20px;
+        display: block;
+    }
+
+    .nav-list li a:hover {
+        background-color: #555;
+    }
+
+    .hamburger-menu {
+        display: block !important;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5em;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .logo a {
+        color: #8B4513;
+    }
+
+    .header {
+        background-color: #ffffff;
+        padding: 15px 0;
+    }
+
+    .header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* Estilo para o botão hamburger (visível em telas menores) */
+.hamburger-menu {
+    display: none; /* Oculto por padrão em telas maiores */
+}

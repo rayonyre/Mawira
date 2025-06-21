@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Mawira</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo"><a href="index.html" id="logoMawira">Mawira</a></h1>
+            <nav class="nav">
+                <button class="hamburger-menu" aria-label="Abrir Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="quizzes.html">Quizzes</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="contact.html">Contato</a></li>
+                    <li id="profileLinkContainer"></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container blog-page-content">
+        <section class="blog-posts">
+            <h2>Artigos Recentes</h2>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Pesquisar posts...">
+                <button id="searchButton"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="post-list">
+                <article class="post-card" data-categories="cuidados">
+                    <img src="https://via.placeholder.com/350x200/87CEEB/FFFFFF?Text=Cuidados" alt="Imagem de destaque da hidratação">
+                    <h3><a href="post-hidratacao.html">A Importância da Hidratação Capilar para Cabelos Saudáveis</a></h3>
+                    <p class="post-meta">Publicado em 15 de Maio de 2024</p>
+                    <p>A hidratação é um passo fundamental em qualquer rotina de cuidados capilares. Cabelos hidratados são mais maleáveis, brilhantes e menos propensos à quebra e ao ressecamento. Descubra os melhores ingredientes e técnicas para manter seus fios sempre hidratados...</p>
+                    <a href="post-hidratacao.html" class="btn btn-secondary">Leia mais</a>
+                </article>
+
+                <article class="post-card" data-categories="receitas-caseiras">
+                    <img src="https://via.placeholder.com/350x200/90EE90/FFFFFF?Text=M%C3%A1scara%20Natural" alt="Imagem de destaque de máscara natural">
+                    <h3><a href="post-mascara-natural.html">Receita Caseira de Máscara de Abacate para Nutrição Intensa</a></h3>
+                    <p class="post-meta">Publicado em 10 de Maio de 2024</p>
+                    <p>O abacate é um ingrediente poderoso para nutrir profundamente os cabelos, graças às suas gorduras saudáveis, vitaminas e minerais. Aprenda a preparar uma máscara capilar caseira simples e eficaz para revitalizar seus fios...</p>
+                    <a href="post-mascara-natural.html" class="btn btn-secondary">Leia mais</a>
+                </article>
+
+                <article class="post-card" data-categories="transicao-capilar">
+                    <img src="https://via.placeholder.com/350x200/D3D3D3/000000?Text=Transi%C3%A7%C3%A3o" alt="Imagem de destaque da transição capilar">
+                    <h3><a href="post-transicao-capilar.html">Dicas Essenciais para uma Transição Capilar Suave e Saudável</a></h3>
+                    <p class="post-meta">Publicado em 05 de Maio de 2024</p>
+                    <p>A transição capilar é um período de descobertas e paciência. Se você está deixando de lado químicas e buscando seus cachos ou ondas naturais, confira estas dicas para tornar essa jornada mais tranquila e fortalecer seus cabelos...</p>
+                    <a href="post-transicao-capilar.html" class="btn btn-secondary">Leia mais</a>
+                </article>
+
+                <article class="post-card" data-categories="problemas-capilares">
+                    <img src="https://via.placeholder.com/350x200/F08080/FFFFFF?Text=Queda%20Capilar" alt="Imagem de destaque da queda capilar">
+                    <h3><a href="post-queda-capilar.html">Entenda as Causas da Queda Capilar e Saiba Como Tratar</a></h3>
+                    <p class="post-meta">Publicado em 01 de Maio de 2024</p>
+                    <p>A queda de cabelo pode ser preocupante e afetar a autoestima. Neste artigo, exploramos as principais causas da queda capilar, desde fatores genéticos até hábitos de vida, e apresentamos algumas formas de tratamento e prevenção...</p>
+                    <a href="post-queda-capilar.html" class="btn btn-secondary">Leia mais</a>
+                </article>
+
+                <article class="post-card" data-categories="cuidados">
+                    <img src="https://via.placeholder.com/350x200/FFA07A/FFFFFF?Text=Nutri%C3%A7%C3%A3o" alt="Imagem de destaque da nutrição capilar">
+                    <h3><a href="post-nutricao-capilar.html">Nutrição Capilar: Alimentos e Produtos Essenciais para Fios Fortes</a></h3>
+                    <p class="post-meta">Publicado em 25 de Abril de 2024</p>
+                    <p>Assim como o nosso corpo, o cabelo também precisa de nutrientes para se manter forte e saudável. Descubra quais alimentos incluir na sua dieta e quais produtos de nutrição capilar podem fazer a diferença na saúde dos seus fios...</p>
+                    <a href="post-nutricao-capilar.html" class="btn btn-secondary">Leia mais</a>
+                </article>
+
+                <article class="post-card" data-categories="cuidados">
+                    <img src="https://via.placeholder.com/350x200/B0C4DE/FFFFFF?Text=Reconstru%C3%A7%C3%A3o" alt="Imagem de destaque da reconstrução capilar">
+                    <h3><a href="post-reconstrucao.html">Reconstrução Capilar: O Que É e Quando Fazer para Salvar Seus Fios</a></h3>
+                    <p class="post-meta">Publicado em 20 de Abril de 2024</p>
+                    <p>A reconstrução capilar é um tratamento intensivo para cabelos danificados, quebradiços e quimicamente tratados. Ela repõe a massa capilar perdida, fortalecendo os fios de dentro para fora. Saiba quando e como realizar a reconstrução...</p>
+                    <a href="post-reconstrucao.html" class="btn btn-secondary">Leia mais</a>
+                </article>
+
+                <article class="post-card" data-categories="receitas-caseiras">
+                    <img src="https://via.placeholder.com/350x200/DAA520/FFFFFF?Text=T%C3%B4nico%20Capilar" alt="Imagem de destaque de tônico capilar">
+                    <h3><a href="post-tonico-caseiro.html">Tônico Capilar Caseiro de Alecrim para Estimular o Crescimento</a></h3>
+                    <p class="post-meta">Publicado em 18 de Abril de 2024</p>
+                    <p>O alecrim é conhecido por suas propriedades que estimulam a circulação sanguínea no couro cabeludo, favorecendo o crescimento saudável dos fios. Aprenda a preparar um tônico caseiro simples e natural para turbinar seu projeto Rapunzel...</p>
+                    <a href="post-tonico-caseiro.html" class="btn btn-secondary">Leia mais</a>
+                </article>
+
+                <article class="post-card" data-categories="problemas-capilares">
+                    <img src="https://via.placeholder.com/350x200/DDA0DD/FFFFFF?Text=Caspa" alt="Imagem de destaque sobre caspa">
+                    <h3><a href="post-adeus-caspa.html">Adeus Caspa: Causas, Sintomas e Melhores Tratamentos Eficazes</a></h3>
+                    <p class="post-meta">Publicado em 12 de Abril de 2024</p>
+                    <p>A caspa é um problema comum do couro cabeludo que pode causar coceira e descamação. Entender suas causas é o primeiro passo para um tratamento eficaz. Descubra os produtos e hábitos que podem te ajudar a se livrar da caspa...</p>
+                    <a href="post-adeus-caspa.html" class="btn btn-secondary">Leia mais</a>
+                </article>
+
+                <article class="post-card" data-categories="tendencias">
+                    <img src="https://via.placeholder.com/350x200/C0C0C0/000000?Text=Tend%C3%AAncias" alt="Imagem de destaque de tendências capilares">
+                    <h3><a href="post-tendencias.html">Top 5 Tendências de Cortes e Cores para Arrasar em 2025</a></h3>
+                    <p class="post-meta">Publicado em 08 de Abril de 2024</p>
+                    <p>Quer renovar o visual? Fique por dentro das últimas tendências em cortes e cores de cabelo que prometem bombar em 2025. Do bob clássico aos tons fantasia, encontre a inspiração perfeita para você...</p>
+                    <a href="post-tendencias.html" class="btn btn-secondary">Leia mais</a>
+                </article>
+
+                <article class="post-card" data-categories="dicas-gerais">
+                    <img src="https://via.placeholder.com/350x200/FFD700/000000?Text=Dicas%20Gerais" alt="Imagem de destaque de dicas gerais">
+                    <h3><a href="post-lavagem-correta.html">Aprenda a Lavagem Correta dos Cabelos para Máxima Limpeza</a></h3>
+                    <p class="post-meta">Publicado em 03 de Abril de 2024</p>
+                    <p>Lavar o cabelo parece simples, mas fazer da forma correta pode potencializar os resultados da sua rotina de cuidados. Descubra a temperatura ideal da água, a quantidade de produto e a técnica de massagem para um cabelo limpo e saudável...</p>
+                    <a href="post-lavagem-correta.html" class="btn btn-secondary">Leia mais</a>
+                </article>
+            </div>
+        </section>
+
+        <aside class="sidebar">
+            <h3>Filtrar por Categoria</h3>
+            <ul class="categories">
+                <li><a href="#" data-category="all" class="active">Todas</a></li>
+                <li><a href="#" data-category="cuidados">Cuidados</a></li>
+                <li><a href="#" data-category="receitas-caseiras">Receitas Caseiras</a></li>
+                <li><a href="#" data-category="transicao-capilar">Transição Capilar</a></li>
+                <li><a href="#" data-category="problemas-capilares">Problemas Capilares</a></li>
+                <li><a href="#" data-category="tendencias">Tendências</a></li>
+                <li><a href="#" data-category="dicas-gerais">Dicas Gerais</a></li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Mawira. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="blog.js"></script>
+    <script src="login-script.js"></script> 
+</body>
+</html>

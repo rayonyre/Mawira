@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil - Mawira</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="profile.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo"><a href="index.html" id="logoMawira">Mawira</a></h1>
+            <nav class="nav">
+                <button class="hamburger-menu" aria-label="Abrir Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="quizzes.html">Quizzes</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contato</a></li>
+                    <li id="profileLinkContainer"><a href="login.html" class="btn btn-login">Fazer Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="profile-page-content container">
+        <div class="profile-card">
+            <div class="profile-header">
+                <div class="profile-avatar-container">
+                    <img id="profileAvatar" src="https://via.placeholder.com/100/A0522D/FFFFFF?text=User" alt="Foto de Perfil" class="profile-avatar">
+                    <label for="avatarUpload" class="upload-icon" title="Alterar Foto">
+                        <i class="fas fa-camera"></i>
+                        <input type="file" id="avatarUpload" accept="image/*" style="display: none;">
+                    </label>
+                </div>
+                <h2 id="profileDisplayName">Bem-vindo(a), <span id="userNameDisplay">Usuário(a)</span>!</h2>
+            </div>
+
+            <section class="personal-info">
+                <h3>Informações Pessoais</h3>
+                <div class="info-item">
+                    <label for="userName">Nome de Usuário:</label>
+                    <input type="text" id="userName" value="Usuário Teste" disabled>
+                </div>
+                <div class="info-item">
+                    <label for="userEmail">E-mail:</label>
+                    <input type="email" id="userEmail" value="teste@mawira.com.br" disabled>
+                    <a href="#" class="link-action">Alterar E-mail (em breve)</a>
+                </div>
+                <div class="info-item">
+                    <label for="hairType">Tipo de Cabelo Salvo:</label>
+                    <input type="text" id="hairType" value="Não identificado" disabled>
+                    <a href="quizzes.html" class="link-action">Refazer Quiz</a>
+                </div>
+                <div class="profile-actions">
+                    <button id="editProfileBtn" class="btn btn-secondary"><i class="fas fa-edit"></i> Editar Perfil</button>
+                    <button id="saveProfileBtn" class="btn btn-primary" style="display: none;"><i class="fas fa-save"></i> Salvar Alterações</button>
+                    <button id="cancelEditBtn" class="btn btn-tertiary" style="display: none;"><i class="fas fa-times-circle"></i> Cancelar</button>
+                </div>
+            </section>
+
+            <section class="quiz-history">
+                <h3>Histórico de Quizzes</h3>
+                <ul id="quizHistoryList">
+                    <li class="no-history-message">Nenhum quiz realizado ainda. <a href="quizzes.html">Comece agora!</a></li>
+                </ul>
+            </section>
+
+            <section class="account-management">
+                <h3>Gerenciamento da Conta</h3>
+                <button class="btn btn-primary-outline"><i class="fas fa-key"></i> Alterar Senha</button>
+                <button id="logoutBtn" class="btn btn-danger"><i class="fas fa-sign-out-alt"></i> Sair</button>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Mawira. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script> <script src="profile.js"></script> <script src="login-script.js"></script> </body>
+</html>
